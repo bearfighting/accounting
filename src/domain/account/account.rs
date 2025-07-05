@@ -30,10 +30,6 @@ impl Account {
     }
 
     pub fn parent_ref(r#ref: u32) -> Option<u32> {
-        if r#ref < 10 {
-            None
-        } else {
-            Some(r#ref / 10)
-        }
+        if r#ref < 10 { None } else { Some(r#ref / 10) }
     }
 }
