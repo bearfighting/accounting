@@ -1,6 +1,6 @@
 use serde::Deserialize;
-use tokio::{fs::File, io::BufReader};
 use std::path::Path;
+use tokio::{fs::File, io::BufReader};
 
 #[derive(Deserialize, Debug, Clone, PartialEq, Eq)]
 pub struct AccountModel {
@@ -13,7 +13,10 @@ pub async fn read_default_chart(path: &Path) -> Result<Vec<AccountModel>, String
     let mut reader = BufReader::new(file);
     let mut contents = String::new();
     use tokio::io::AsyncReadExt;
-    reader.read_to_string(&mut contents).await.map_err(|e| e.to_string())?;
+    reader
+        .read_to_string(&mut contents)
+        .await
+        .map_err(|e| e.to_string())?;
     let chart: Vec<AccountModel> = serde_json::from_str(&contents).map_err(|e| e.to_string())?;
     Ok(chart)
 }
