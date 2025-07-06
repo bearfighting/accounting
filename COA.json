@@ -1,0 +1,22 @@
+[
+    {
+        "ref": 1,
+        "name": "Assets"
+    },
+    {
+        "ref": 2,
+        "name": "Liabilities"
+    },
+    {
+        "ref": 3,
+        "name": "Equity"
+    },
+    {
+        "ref": 4,
+        "name": "Revenue"
+    },
+    {
+        "ref": 5,
+        "name": "Expenses"
+    }
+]
